@@ -1,0 +1,31 @@
+﻿<Window x:Class="SineWaveStory.App.SignalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Sine wave story" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"></ColumnDefinition>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <WpfPlot x:Name="Chart" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Stretch" Margin="10,10,0,0" HorizontalAlignment="Stretch"/>
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="5,15,5,0">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10">
+                <Label Content="Амплитуда сигнала"></Label>
+                <TextBox Text="{Binding Amplitude}"></TextBox>
+                <Label Content="Частота"></Label>
+                <TextBox Text="{Binding Frequency}"></TextBox>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch" >
+                <Button Margin="0,0,0,10" Click="Start" x:Name="StartButton" Content="Запуск" Padding="5"></Button>
+                <Button Click="Stop" Content="Стоп" Padding="5"></Button>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Window>
